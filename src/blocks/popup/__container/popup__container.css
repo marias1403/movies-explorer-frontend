@@ -1,0 +1,10 @@
+.popup__container {
+  width: 400px;
+  min-height: 190px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}

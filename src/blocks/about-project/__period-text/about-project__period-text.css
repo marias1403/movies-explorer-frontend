@@ -1,0 +1,17 @@
+.about-project__period-text {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+  color: #8B8B8B;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .about-project__period-text {
+    font-size: 11px;
+    line-height: 13px;
+  }
+}

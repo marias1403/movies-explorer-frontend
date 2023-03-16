@@ -1,0 +1,16 @@
+.footer__wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 120px 42px;
+  column-gap: 20px;
+  justify-items: start;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .footer__wrapper {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    justify-content: center;
+  }
+}

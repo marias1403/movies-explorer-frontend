@@ -1,0 +1,23 @@
+.promo__wrapper {
+  max-width: 1140px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 102px;
+}
+
+@media screen and (max-width: 1279px) {
+  .promo__wrapper {
+    max-width: 768px;
+    align-items: center;
+    gap: 140px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .promo__wrapper {
+    overflow: hidden;
+  }
+}

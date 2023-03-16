@@ -1,0 +1,8 @@
+.movie__button_added {
+  background-color: #EE3465;
+  background-image: url(../../../../images/added_movie_icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 9px 6px;
+  font-size: 0;
+}

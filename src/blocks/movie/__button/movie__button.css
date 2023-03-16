@@ -1,0 +1,20 @@
+.movie__button {
+  margin: 18px 130px;
+  display: inline-block;
+  text-align: center;
+  height: 29px;
+  width: 100px;
+  background-color: #313131;
+  border-radius: 15px;
+  border: none;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 400;
+  color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .movie__button {
+    margin: 14px 100px;
+  }
+}

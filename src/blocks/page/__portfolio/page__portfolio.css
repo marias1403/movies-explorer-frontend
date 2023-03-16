@@ -1,0 +1,19 @@
+.page__portfolio {
+  margin: -15px auto 125px;
+}
+
+@media screen and (max-width: 1279px) {
+  .page__portfolio {
+    margin: -5px auto 88px;
+    padding: 0 50px;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .page__portfolio {
+    margin: -5px auto 88px;
+    padding: 0 14px;
+    box-sizing: border-box;
+  }
+}

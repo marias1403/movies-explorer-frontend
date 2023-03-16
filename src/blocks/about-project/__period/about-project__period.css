@@ -1,0 +1,20 @@
+.about-project__period {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 36px;
+  background-color: #3DDC84;
+  text-align: center;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #000;
+}
+
+@media screen and (max-width: 767px) {
+  .about-project__period {
+    font-size: 11px;
+    line-height: 13px;
+  }
+}

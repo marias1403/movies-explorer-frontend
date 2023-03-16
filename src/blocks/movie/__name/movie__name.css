@@ -1,0 +1,15 @@
+.movie__name {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .movie__name {
+    font-size: 12px;
+  }
+}

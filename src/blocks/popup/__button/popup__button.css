@@ -1,0 +1,14 @@
+.popup__button {
+  display: inline-block;
+  text-align: center;
+  min-height: 17px;
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #4285F4;
+  position: absolute;
+  top: 375px;
+  left: auto;
+}
