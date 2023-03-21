@@ -7,3 +7,10 @@
   font-weight: 400;
   color: #fff;
 }
+
+@media screen and (max-width: 767px) {
+  .popup__title {
+    font-size: 80px;
+    line-height: 97px;
+  }
+}

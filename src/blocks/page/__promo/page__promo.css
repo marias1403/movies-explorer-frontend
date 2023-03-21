@@ -1,15 +1,15 @@
 .page__promo {
-  padding: 68px 0 60px 0;
+  padding: 68px 0 60px;
 }
 
 @media screen and (max-width: 1279px) {
   .page__promo {
-    padding: 318px 0 70px 0;
+    padding: 318px 0 70px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .page__promo {
-    padding: 202px 0 10px 0;
+    padding: 202px 0 40px;
   }
 }

@@ -9,6 +9,7 @@ import Profile from '../Profile/Profile';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import InfoTooltip from '../InfoTooltip/InfoTooltip';
+import NavTab from '../NavTab/NavTab';
 
 function App() {
   return (
@@ -63,6 +64,7 @@ function App() {
           />
         </Routes>
         <InfoTooltip />
+        <NavTab />
       </div>
     </div>
   );

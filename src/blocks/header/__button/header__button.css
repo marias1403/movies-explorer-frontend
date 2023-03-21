@@ -3,13 +3,16 @@
   height: 32px;
   background-color: #3DDC84;
   border-style: none;
-  display: inline-block;
   text-align: center;
   border-radius: 3px;
   font-size: 12px;
   line-height: 16px;
   font-weight: 500;
   color: #000;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 767px) {

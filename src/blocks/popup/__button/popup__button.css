@@ -1,4 +1,5 @@
 .popup__button {
+  padding: 184px 0 0;
   display: inline-block;
   text-align: center;
   min-height: 17px;
@@ -8,7 +9,12 @@
   line-height: 16px;
   font-weight: 400;
   color: #4285F4;
-  position: absolute;
-  top: 375px;
-  left: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .popup__button {
+    padding: 284px 0 0;
+    font-size: 12px;
+    line-height: 15px;
+  }
 }

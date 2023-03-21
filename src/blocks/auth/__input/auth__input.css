@@ -11,6 +11,11 @@
   overflow: hidden;
   color: #fff;
   position: relative;
+  outline: none;
+}
+
+.auth__input:focus {
+  border: 1px solid #4285F4;
 }
 
 .auth__input:last-of-type {

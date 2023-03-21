@@ -1,0 +1,12 @@
+.header__burger-menu {
+  margin: 0;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  background-color: transparent;
+  background-image: url(../../../images/burger-menu-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 44px 44px;
+  border: none;
+}

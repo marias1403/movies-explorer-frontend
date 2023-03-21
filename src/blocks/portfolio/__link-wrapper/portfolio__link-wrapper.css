@@ -5,8 +5,5 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #424242;
-}
-
-.portfolio__link-wrapper:last-of-type {
-  border-bottom: none;
+  list-style: none;
 }

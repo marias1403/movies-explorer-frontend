@@ -1,0 +1,21 @@
+.nav-tab__container {
+  padding: 159px 50px 92px;
+  width: 520px;
+  height: 100%;
+  background-color: #202020;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+  .nav-tab__container {
+    padding: 144px 50px 48px;
+    width: 100%;
+  }
+}

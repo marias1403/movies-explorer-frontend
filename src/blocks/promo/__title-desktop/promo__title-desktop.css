@@ -1,4 +1,4 @@
-.promo__title {
+.promo__title-desktop {
   margin: 0;
   padding: 0;
   text-align: left;
@@ -7,18 +7,16 @@
   letter-spacing: -1.6px;
   font-weight: 400;
   color: #fff;
-  max-width: 100%;
 }
 
 @media screen and (max-width: 1279px) {
-  .promo__title {
+  .promo__title-desktop {
     text-align: center;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .promo__title {
-    font-size: 31px;
-    line-height: 39px;
+  .promo__title-desktop {
+    display: none;
   }
 }

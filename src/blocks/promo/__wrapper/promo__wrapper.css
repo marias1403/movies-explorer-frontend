@@ -1,23 +1,30 @@
 .promo__wrapper {
   max-width: 1140px;
   width: 100%;
+  height: 450px;
   display: flex;
   flex-direction: column;
   align-items: start;
-  justify-content: center;
-  gap: 102px;
+  justify-content: start;
+  background-image: url(../../../images/promo_image.svg);
+  background-repeat: no-repeat;
+  background-position: bottom 0 right 0;
+  background-size: 722px 244px;
 }
 
 @media screen and (max-width: 1279px) {
   .promo__wrapper {
     max-width: 768px;
+    height: 474px;
     align-items: center;
-    gap: 140px;
+    background-position: bottom 0 center;
+    background-size: 680px 230px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .promo__wrapper {
     overflow: hidden;
+    height: 407px;
   }
 }

@@ -7,3 +7,10 @@
   font-weight: 400;
   color: #fff;
 }
+
+@media screen and (max-width: 767px) {
+  .popup__text {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
