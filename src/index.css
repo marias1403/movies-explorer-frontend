@@ -15,7 +15,7 @@
 @import url(./blocks/button/button.css);
 
 @import url(./blocks/header/header.css);
-@import url(./blocks/header/_authorized/header_authorized.css);
+@import url(./blocks/header/_promo-background/header_promo-background.css);
 @import url(./blocks/header/__wrapper/header__wrapper.css);
 @import url(./blocks/page/__header/page__header.css);
 @import url(./blocks/header/__logo-container/header__logo-container.css);
@@ -32,7 +32,6 @@
 @import url(./blocks/header/__button/header__button.css);
 @import url(./blocks/header/__button/_hidden/header__button_hidden.css);
 @import url(./blocks/header/__burger-menu/header__burger-menu.css);
-@import url(./blocks/header/__burger-menu/_hidden/header__burger-menu_hidden.css);
 
 @import url(./blocks/main/main.css);
 
@@ -78,7 +77,6 @@
 @import url(./blocks/portfolio/__list/portfolio__list.css);
 @import url(./blocks/portfolio/__link/portfolio__link.css);
 @import url(./blocks/portfolio/__link-wrapper/portfolio__link-wrapper.css);
-@import url(./blocks/portfolio/__link-wrapper/_hidden-border-bottom/portfolio__link-wrapper_hidden-border-bottom.css);
 @import url(blocks/portfolio/__subtitle/portfolio__subtitle.css);
 @import url(./blocks/portfolio/__link-icon/portfolio__link-icon.css);
 

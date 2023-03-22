@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 function Header() {
   return (
-    <header className='header header_authorized page__header section'>
+    <header className='header page__header section'>
       <div className='header__wrapper'>
         <div className='header__logo-container'>
           <NavLink className='header__logo link' to='/'></NavLink>
@@ -19,7 +19,7 @@ function Header() {
             <NavLink to='/profile' className='header__link link'>Аккаунт</NavLink>
             <div className='header__link-icon link'></div>
           </div>
-          <button className='header__burger-menu button header__burger-menu_hidden'></button>
+          <button className='header__burger-menu button'></button>
         </div>
       </div>
     </header>

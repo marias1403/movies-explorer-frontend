@@ -1,4 +1,5 @@
 .header__burger-menu {
+  display: none;
   margin: 0;
   padding: 0;
   width: 44px;
@@ -9,4 +10,10 @@
   background-position: center;
   background-size: 44px 44px;
   border: none;
+}
+
+@media screen and (max-width: 1279px) {
+  .header__burger-menu {
+    display: block;
+  }
 }

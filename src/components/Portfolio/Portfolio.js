@@ -6,24 +6,24 @@ function Portfolio() {
     <section className='portfolio page__portfolio section content__section'>
       <h2 className='portfolio__title'>Портфолио</h2>
       <ul className='portfolio__list'>
-        <a className='portfolio__link' href='https://github.com/marias1403/how-to-learn#научиться-учиться' target='_blank' rel='noopener noreferrer'>
-          <li className='portfolio__link-wrapper link'>
+        <li className='portfolio__link-wrapper link'>
+          <a className='portfolio__link' href='https://github.com/marias1403/how-to-learn#научиться-учиться' target='_blank' rel='noopener noreferrer'>
             <h3 className='portfolio__subtitle'>Статичный сайт</h3>
             <img className='portfolio__link-icon' src={linkIcon} alt='Иконка ссылки'/>
-          </li>
-        </a>
-        <a className='portfolio__link' href='https://marias1403.github.io/russian-travel/index.html' target='_blank' rel='noopener noreferrer'>
-          <li className='portfolio__link-wrapper link'>
+          </a>
+        </li>
+        <li className='portfolio__link-wrapper link'>
+          <a className='portfolio__link' href='https://marias1403.github.io/russian-travel/index.html' target='_blank' rel='noopener noreferrer'>
             <h3 className='portfolio__subtitle'>Адаптивный сайт</h3>
             <img className='portfolio__link-icon' src={linkIcon} alt='Иконка ссылки'/>
-          </li>
-        </a>
-        <a className='portfolio__link' href='https://github.com/marias1403/react-mesto-api-full' target='_blank' rel='noopener noreferrer'>
-          <li className='portfolio__link-wrapper portfolio__link-wrapper_hidden-border-bottom link'>
+          </a>
+        </li>
+        <li className='portfolio__link-wrapper link'>
+          <a className='portfolio__link' href='https://github.com/marias1403/react-mesto-api-full' target='_blank' rel='noopener noreferrer'>
             <h3 className='portfolio__subtitle'>Одностраничное приложение</h3>
             <img className='portfolio__link-icon' src={linkIcon} alt='Иконка ссылки'/>
-          </li>
-        </a>
+          </a>
+        </li>
       </ul>
     </section>
   );

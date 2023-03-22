@@ -1,9 +1,9 @@
 .portfolio__link-wrapper {
   padding: 20px 0 19px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   border-bottom: 1px solid #424242;
   list-style: none;
+}
+
+.portfolio__link-wrapper:last-of-type {
+  border-bottom: none;
 }
