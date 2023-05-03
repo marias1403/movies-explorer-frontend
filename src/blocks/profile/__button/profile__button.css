@@ -1,16 +1,16 @@
 .profile__button {
-  display: inline-block;
-  text-align: center;
-  min-height: 16px;
+  margin: 0 0 16px;
+  height: 16px;
   width: 100%;
   background-color: transparent;
   border: none;
+  text-align: center;
   font-size: 13px;
   line-height: 16px;
   font-weight: 400;
   color: #fff;
 }
 
-.profile__button:first-of-type {
-  margin: 0 0 16px;
+.profile__button:disabled {
+  opacity: 0.3;
 }

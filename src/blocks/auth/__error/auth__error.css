@@ -1,12 +1,12 @@
 .auth__error {
-  margin: 5px 0 0 0;
-  box-sizing: border-box;
-  height: 12px;
+  margin: 0;
+  padding: 0;
   text-align: left;
   font-size: 10px;
-  line-height: 10px;
+  line-height: 12px;
   font-weight: 400;
   color: #EE3465;
-  display: none;
   position: absolute;
+  top: 77px;
+  left: 0;
 }

@@ -11,3 +11,9 @@
   font-weight: 500;
   color: #fff;
 }
+
+.search-form__button:disabled {
+  background-color: #F8F8F8;
+  color: #C2C2C2;
+  cursor: not-allowed;
+}

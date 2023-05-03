@@ -1,6 +1,7 @@
 .auth {
-  max-width: 396px;
+  width: 396px;
   height: 80vh;
+  box-sizing: content-box;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -10,7 +11,13 @@
 
 @media screen and (max-width: 767px) {
   .auth {
-    width: 100%;
     align-items: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .auth {
+    box-sizing: border-box;
+    width: 100%;
   }
 }

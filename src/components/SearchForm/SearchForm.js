@@ -1,24 +1,76 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
+import { useFormWithValidation } from '../UseFormValidation/UseFormValidation';
 
-function SearchForm() {
+function SearchForm(props) {
+  const {data, handleChange, errors, resetForm} = useFormWithValidation({
+    searchMovie: props.searchParams.request,
+  });
+  const [shortMoviesOnly, setShortMoviesOnly] = useState(props.searchParams.isShortMovie);
+
+  const [searchMovie, setSearchMovie] = useState(props.searchParams.request);
+
+  useEffect(() => {
+    setSearchMovie('');
+    resetForm();
+  }, [props.type]);
+
+  useEffect(() => {
+    if (data !== null) {
+      setSearchMovie(data.searchMovie);
+    }
+  }, [data]);
+
+  function filterMovies() {
+    props.onSetIsLoading(true);
+    setTimeout(() => {
+      let filteredMoviesData = props.movies;
+      if (shortMoviesOnly) {
+        filteredMoviesData = filteredMoviesData.filter((movie) => movie.duration <= 40);
+      }
+      if (data.searchMovie) {
+        filteredMoviesData = props.movies.filter((movie) => movie.nameRU.toLowerCase().includes(data.searchMovie.toLowerCase()));
+        if (shortMoviesOnly) {
+          filteredMoviesData = filteredMoviesData.filter((movie) => movie.duration <= 40);
+        }
+      }
+      props.onSaveSearchParams({
+        request: data.searchMovie,
+        isShortMovie: shortMoviesOnly,
+        result: filteredMoviesData,
+      });
+      props.onSetMovies(filteredMoviesData);
+      props.onSetIsLoading(false);
+      props.setWasSearched(true);
+    }, 500);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    filterMovies();
+  }
+
   return (
     <section className='search-form page__search-form section content__section'>
       <div className='search-form__wrapper'>
-        <form className='search-form__form'>
+        <form onSubmit={handleSubmit} className='search-form__form' onReset={resetForm}>
           <input
             id='searchMovie'
             type='text'
             name='searchMovie'
             className='search-form__input'
-            placeholder='Фильм'
-            required
+            placeholder='Введите название фильма'
             aria-label='searchMovie'
+            onChange={handleChange}
+            value={searchMovie}
           />
+          <span id='searchMovie-error' className='search-form__error'>
+            { errors.searchMovie ? errors.searchMovie : null }
+          </span>
           <button className='search-form__button button' type='submit'>Найти</button>
         </form>
       </div>
-      <FilterCheckbox />
+      <FilterCheckbox shortMoviesOnly={shortMoviesOnly} onSetShortMoviesOnly={setShortMoviesOnly}/>
     </section>
   );
 }

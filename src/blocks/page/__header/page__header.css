@@ -1,6 +1,7 @@
 .page__header {
   padding: 18px 0 0;
   box-sizing: border-box;
+  flex: 0 0 auto;
 }
 
 @media screen and (max-width: 1279px) {

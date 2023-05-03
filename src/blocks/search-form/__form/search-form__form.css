@@ -4,4 +4,5 @@
   column-gap: 22px;
   justify-items: start;
   align-items: center;
+  position: relative;
 }

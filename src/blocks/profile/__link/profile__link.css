@@ -1,0 +1,11 @@
+.profile__link {
+  text-align: center;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #EE3465;
+}
+
+.profile__link:disabled {
+  opacity: 0.5;
+}

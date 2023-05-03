@@ -1,0 +1,4 @@
+.burger-menu__popup_opened {
+  visibility: visible;
+  opacity: 1;
+}

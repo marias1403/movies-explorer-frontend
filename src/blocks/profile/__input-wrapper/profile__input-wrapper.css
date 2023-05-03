@@ -5,6 +5,7 @@
   justify-items: start;
   align-items: center;
   border-bottom: 1px solid #424242;
+  position: relative;
 }
 
 .profile__input-wrapper:last-of-type {

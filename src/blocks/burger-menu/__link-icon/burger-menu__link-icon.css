@@ -1,0 +1,10 @@
+.burger-menu__link-icon {
+  width: 30px;
+  height: 30px;
+  background-color: #313131;
+  border-radius: 6px;
+  background-image: url(../../../images/account_icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px 10px;
+}
