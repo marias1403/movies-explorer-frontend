@@ -1,7 +1,10 @@
 # Верстка проекта Movies-explorer
 
 Ссылка на [макет проекта](https://drive.google.com/file/d/1wk9oUpuHDBwXSGDJ8457STsv6DpuHllN/view?usp=sharing).
+
 Ссылка на [pull request](https://github.com/marias1403/movies-explorer-frontend/pull/2)
+
+Ссылка на [фронтенд-часть](http://marias.movies.explore.nomoredomains.monster/)
 
 ## Available Scripts
 
