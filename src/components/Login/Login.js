@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../images/logo.svg';
 import { useFormWithValidation } from '../UseFormValidation/UseFormValidation';
 
 function Login(props) {
-  const  {data, handleChange, errors, isValid, resetForm} = useFormWithValidation();
+  const  {data, handleChange, errors, isValid} = useFormWithValidation();
 
   function handleSubmit(e) {
     e.preventDefault();
     props.onLogin(data.email, data.password);
-    resetForm();
   }
 
   return (

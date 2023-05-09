@@ -72,6 +72,8 @@ function App() {
           setServerProblem(true);
           console.log(err);
         })
+    } else {
+      setIsLoggedIn(false);
     }
   }, [isLoggedIn]);
 
@@ -185,9 +187,9 @@ function App() {
         }
       })
       .catch((err) => {
+        handleAuthResult(false);
         setServerProblem(true);
         console.log(err);
-        handleAuthResult(false);
       });
   }
 
@@ -288,6 +290,8 @@ function App() {
     }
     return res;
   }
+
+  console.log(isLoggedIn);
 
   return (
     <CurrentUserContext.Provider value={ currentUser }>

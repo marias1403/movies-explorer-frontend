@@ -4,12 +4,11 @@ import logo from '../../images/logo.svg';
 import { useFormWithValidation } from '../UseFormValidation/UseFormValidation';
 
 function Register(props) {
-  const  {data, handleChange, errors, isValid, resetForm} = useFormWithValidation();
+  const  {data, handleChange, errors, isValid} = useFormWithValidation();
 
   function handleSubmit(e) {
     e.preventDefault();
     props.onRegister(data.name, data.email, data.password);
-    resetForm();
   }
 
   return (
