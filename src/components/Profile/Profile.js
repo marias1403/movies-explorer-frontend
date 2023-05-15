@@ -75,7 +75,8 @@ function Profile(props) {
               type='email'
               name='profileEmail'
               className='profile__input'
-              placeholder='pochta@yandex.ru'
+              placeholder='Email'
+              pattern='^[^\s@]+@[^\s@]+\.[^\s@]+$'
               required
               disabled={isDisabled}
               aria-label='profileEmail'
@@ -87,7 +88,7 @@ function Profile(props) {
             </span>
           </div>
           <button className={`profile__button button ${isEditButtonHidden}`} onClick={handleEditButtonClick}>Редактировать</button>
-          <NavLink onClick={signOut} to='/signin' className={`profile__link link ${isLinkHidden}`}>Выйти из аккаунта</NavLink>
+          <NavLink onClick={signOut} exact to='/' className={`profile__link link ${isLinkHidden}`}>Выйти из аккаунта</NavLink>
           <button type='submit' disabled={!isValid || isSubmitButtonDisabled} className={`submit-button button ${isSubmitButtonHidden}`}>Сохранить</button>
         </form>
       </div>

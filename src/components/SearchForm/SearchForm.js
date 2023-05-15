@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 import { useFormWithValidation } from '../UseFormValidation/UseFormValidation';
+import { SHORT_FILM_DURATION } from '../../utils/constants';
 
 function SearchForm(props) {
   const {data, handleChange, errors, resetForm} = useFormWithValidation({
@@ -26,12 +27,12 @@ function SearchForm(props) {
     setTimeout(() => {
       let filteredMoviesData = props.movies;
       if (shortMoviesOnly) {
-        filteredMoviesData = filteredMoviesData.filter((movie) => movie.duration <= 40);
+        filteredMoviesData = filteredMoviesData.filter((movie) => movie.duration <= SHORT_FILM_DURATION);
       }
       if (data.searchMovie) {
         filteredMoviesData = props.movies.filter((movie) => movie.nameRU.toLowerCase().includes(data.searchMovie.toLowerCase()));
         if (shortMoviesOnly) {
-          filteredMoviesData = filteredMoviesData.filter((movie) => movie.duration <= 40);
+          filteredMoviesData = filteredMoviesData.filter((movie) => movie.duration <= SHORT_FILM_DURATION);
         }
       }
       props.onSaveSearchParams({

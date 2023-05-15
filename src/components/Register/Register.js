@@ -13,7 +13,9 @@ function Register(props) {
 
   return (
     <section className='auth page__auth section content__section'>
-      <img className='auth__logo' src={logo} alt='Логотип'/>
+      <Link className='link' to='/'>
+        <img className='auth__logo' src={logo} alt='Логотип'/>
+      </Link>
       <h2 className='auth__title'>Добро пожаловать!</h2>
       <form onSubmit={handleSubmit} className='auth__form'>
         <div className='auth__input-wrapper'>
@@ -42,8 +44,9 @@ function Register(props) {
             type='email'
             name='email'
             className='auth__input'
-            placeholder='pochta@email.ru'
+            placeholder='Email'
             aria-label='registerEmail'
+            pattern='^[^\s@]+@[^\s@]+\.[^\s@]+$'
             required
             onChange={handleChange}
           />

@@ -21,7 +21,7 @@ function Header(props) {
     <header style={headerStyle} className='header page__header section'>
       <div className='header__wrapper'>
         <div className='header__logo-container'>
-          <NavLink className='header__logo link' to='/'></NavLink>
+          <NavLink className='header__logo link' exact to='/'></NavLink>
           <div className={`header__nav-container ${isNavContainerHidden}`}>
             <NavLink to='/movies' className='header__link link'>Фильмы</NavLink>
             <NavLink to='/saved-movies' className='header__link link'>Сохранённые фильмы</NavLink>

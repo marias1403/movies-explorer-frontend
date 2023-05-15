@@ -5,7 +5,7 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 
 function Movies(props) {
   const [isLoading, setIsLoading] = useState(false);
-  const [wasSearched, setWasSearched] = useState(false)
+  const [wasSearched, setWasSearched] = useState(false);
 
   return (
     <main className='movies-page'>

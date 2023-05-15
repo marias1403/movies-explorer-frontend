@@ -13,7 +13,9 @@ function Login(props) {
 
   return (
     <section className='auth page__auth section content__section'>
-      <img className='auth__logo' src={logo} alt='Логотип'/>
+      <Link className='link' to='/'>
+        <img className='auth__logo' src={logo} alt='Логотип'/>
+      </Link>
       <h2 className='auth__title'>Рады видеть!</h2>
       <form onSubmit={handleSubmit} className='auth__form'>
         <div className='auth__input-wrapper'>
@@ -23,7 +25,8 @@ function Login(props) {
             type='email'
             name='email'
             className='auth__input'
-            placeholder='pochta@yandex.ru'
+            placeholder='Email'
+            pattern='^[^\s@]+@[^\s@]+\.[^\s@]+$'
             required
             aria-label='registerEmail'
             onChange={handleChange}

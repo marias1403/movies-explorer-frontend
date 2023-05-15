@@ -15,6 +15,13 @@ import NavTab from '../NavTab/NavTab';
 import Preloader from '../Preloader/Preloader';
 import * as mainApi from '../../utils/MainApi';
 import * as moviesApi from '../../utils/MoviesApi';
+import {
+  DESKTOP_MOVIE_COUNT,
+  TABLET_MOVIE_COUNT,
+  MOBILE_MOVIE_COUNT,
+  MORE_MOVIE_COUNT,
+  MOBILE_MORE_MOVIE_COUNT
+} from '../../utils/constants';
 
 function App() {
   const navigate = useNavigate();
@@ -34,19 +41,19 @@ function App() {
     isShortMovie: false,
     result: [],
   });
-  const [numberToMap, setNumberToMap] = useState(12);
-  const [moreNumberToMap, setMoreNumberToMap] = useState(3);
+  const [numberToMap, setNumberToMap] = useState(DESKTOP_MOVIE_COUNT);
+  const [moreNumberToMap, setMoreNumberToMap] = useState(MORE_MOVIE_COUNT);
 
   const handleWindowResize = () => {
     if (window.innerWidth >= 1280) {
-      setNumberToMap(12);
-      setMoreNumberToMap(3);
+      setNumberToMap(DESKTOP_MOVIE_COUNT);
+      setMoreNumberToMap(MORE_MOVIE_COUNT);
     } else if (window.innerWidth <= 1279 && window.innerWidth > 767) {
-      setNumberToMap(8);
-      setMoreNumberToMap(2);
+      setNumberToMap(TABLET_MOVIE_COUNT);
+      setMoreNumberToMap(MOBILE_MORE_MOVIE_COUNT);
     } else if (window.innerWidth <= 767) {
-      setNumberToMap(5);
-      setMoreNumberToMap(2);
+      setNumberToMap(MOBILE_MOVIE_COUNT);
+      setMoreNumberToMap(MOBILE_MORE_MOVIE_COUNT);
     }
   }
 
@@ -160,7 +167,9 @@ function App() {
       .then((res) => {
         if(res) {
           handleAuthResult(true);
-          navigate('/signin');
+          localStorage.setItem('jwt', res.token);
+          handleGetUserData(res.token);
+          navigate('/movies');
         } else {
           handleAuthResult(false);
         }
