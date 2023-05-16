@@ -26,6 +26,18 @@ function Profile(props) {
 
   function signOut() {
     localStorage.removeItem('jwt');
+    localStorage.removeItem('searchParams');
+    props.setSearchParams({
+      request: '',
+      isShortMovie: false,
+      result: [],
+    });
+    props.setCurrentUser({});
+    props.setUserData(null);
+    props.setFilteredMovies([]);
+    props.setSavedMovies([]);
+    props.setFilteredSavedMovies([]);
+    props.setIsLoggedIn(null);
     navigate('/');
   }
 
@@ -88,7 +100,7 @@ function Profile(props) {
             </span>
           </div>
           <button className={`profile__button button ${isEditButtonHidden}`} onClick={handleEditButtonClick}>Редактировать</button>
-          <NavLink onClick={signOut} exact to='/' className={`profile__link link ${isLinkHidden}`}>Выйти из аккаунта</NavLink>
+          <NavLink onClick={signOut} to='/' className={`profile__link link ${isLinkHidden}`}>Выйти из аккаунта</NavLink>
           <button type='submit' disabled={!isValid || isSubmitButtonDisabled} className={`submit-button button ${isSubmitButtonHidden}`}>Сохранить</button>
         </form>
       </div>

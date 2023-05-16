@@ -94,27 +94,14 @@ export const getSavedMovies = () => {
     .then((res) => res.data);
 };
 
-export const addMovie = (movie) => {
-  return fetch(`${BASE_URL}/movies`, {
-    method: 'POST',
+export const deleteMovie = (movieId) => {
+  return fetch(`${BASE_URL}/movies/${movieId}`, {
+    method: 'DELETE',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${getToken()}`,
-    },
-    body: JSON.stringify({
-      country: movie.country,
-      director: movie.director,
-      duration: movie.duration,
-      year: movie.year,
-      description: movie.description,
-      image: movie.image,
-      trailer: movie.trailer,
-      nameRU: movie.nameRU,
-      nameEN: movie.nameEN,
-      thumbnail: movie.thumbnail,
-      movieId: movie.id,
-    }),
+    }
   })
     .then((res) => {
       if (!res.ok) {
@@ -124,14 +111,36 @@ export const addMovie = (movie) => {
     })
 }
 
-export const deleteMovie = (movieId) => {
-  return fetch(`${BASE_URL}/movies/${movieId}`, {
-    method: 'DELETE',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${getToken()}`,
-    }
+export const changeAddCardStatus = (movie, isAlreadySaved) => {
+  let url = `${BASE_URL}/movies`;
+  let method = 'POST';
+  let headers = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${getToken()}`,
+  };
+  let body = JSON.stringify({
+    country: movie.country,
+    director: movie.director,
+    duration: movie.duration,
+    year: movie.year,
+    description: movie.description,
+    image: movie.image,
+    trailer: movie.trailer,
+    nameRU: movie.nameRU,
+    nameEN: movie.nameEN,
+    thumbnail: movie.thumbnail,
+    movieId: movie.movieId
+  });
+  if (!isAlreadySaved) {
+    url = `${BASE_URL}/movies/${movie.id}`;
+    method = 'DELETE';
+    body = null;
+  }
+  return fetch(url, {
+    method: method,
+    headers: headers,
+    body: body,
   })
     .then((res) => {
       if (!res.ok) {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SearchForm from '../SearchForm/SearchForm';
 import Preloader from '../Preloader/Preloader';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
@@ -10,6 +10,9 @@ function Movies(props) {
   return (
     <main className='movies-page'>
       <SearchForm
+        initialData={{
+          searchMovie: props.searchParams.request,
+        }}
         type={props.type}
         movies={props.searchMovies}
         setWasSearched={setWasSearched}

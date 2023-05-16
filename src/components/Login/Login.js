@@ -42,7 +42,7 @@ function Login(props) {
             type='password'
             name='password'
             className='auth__input'
-            placeholder=''
+            placeholder='Пароль'
             required
             aria-label='registerPassword'
             onChange={handleChange}

@@ -4,12 +4,18 @@ import { useFormWithValidation } from '../UseFormValidation/UseFormValidation';
 import { SHORT_FILM_DURATION } from '../../utils/constants';
 
 function SearchForm(props) {
-  const {data, handleChange, errors, resetForm} = useFormWithValidation({
-    searchMovie: props.searchParams.request,
-  });
-  const [shortMoviesOnly, setShortMoviesOnly] = useState(props.searchParams.isShortMovie);
+  const initialSearchParams = {
+    isShortMovie: false,
+    request: '',
+  }
+  if (props.searchParams) {
+    initialSearchParams.isShortMovie = props.searchParams.isShortMovie;
+    initialSearchParams.request = props.searchParams.request;
+  }
 
-  const [searchMovie, setSearchMovie] = useState(props.searchParams.request);
+  const {data, handleChange, errors, resetForm} = useFormWithValidation(props.initialData);
+  const [shortMoviesOnly, setShortMoviesOnly] = useState(initialSearchParams.isShortMovie);
+  const [searchMovie, setSearchMovie] = useState(initialSearchParams.request);
 
   useEffect(() => {
     setSearchMovie('');
@@ -35,11 +41,13 @@ function SearchForm(props) {
           filteredMoviesData = filteredMoviesData.filter((movie) => movie.duration <= SHORT_FILM_DURATION);
         }
       }
-      props.onSaveSearchParams({
-        request: data.searchMovie,
-        isShortMovie: shortMoviesOnly,
-        result: filteredMoviesData,
-      });
+      if (props.type !== 'saved') {
+        props.onSaveSearchParams({
+          request: data.searchMovie,
+          isShortMovie: shortMoviesOnly,
+          result: filteredMoviesData,
+        });
+      }
       props.onSetMovies(filteredMoviesData);
       props.onSetIsLoading(false);
       props.setWasSearched(true);

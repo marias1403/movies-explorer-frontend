@@ -9,6 +9,7 @@ import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
 import Profile from '../Profile/Profile';
 import Movies from '../Movies/Movies';
+import SavedMovies from '../SavedMovies/SavedMovies';
 import Error from '../Error/Error';
 import InfoTooltip from '../InfoTooltip/InfoTooltip';
 import NavTab from '../NavTab/NavTab';
@@ -64,7 +65,7 @@ function App() {
 
   useEffect(() => {
     const jwt = localStorage.getItem('jwt');
-    if (jwt) {
+    if (isLoggedIn && jwt) {
       mainApi.getUserData(jwt)
         .then((userData) => {
           if (userData) {
@@ -86,7 +87,7 @@ function App() {
 
   useEffect(() => {
     const jwt = localStorage.getItem('jwt');
-    if (isLoggedIn) {
+    if (isLoggedIn && jwt) {
       mainApi.getUserData(jwt)
         .then(res => res.data)
         .then(user => setCurrentUser(user))
@@ -166,6 +167,7 @@ function App() {
     mainApi.register(name, email, password)
       .then((res) => {
         if(res) {
+          setIsLoggedIn(true);
           handleAuthResult(true);
           localStorage.setItem('jwt', res.token);
           handleGetUserData(res.token);
@@ -188,6 +190,7 @@ function App() {
     mainApi.authorize(email, password)
       .then((res) => {
         if (res.token) {
+          setIsLoggedIn(true);
           localStorage.setItem('jwt', res.token);
           handleGetUserData(res.token);
           navigate('/movies');
@@ -218,23 +221,30 @@ function App() {
       });
   }
 
-  function handleMovieAdd(movie) {
-    const isAlreadySaved = savedMovies.some(i => i.id === movie.id);
-    if (!isAlreadySaved) {
-      mainApi.addMovie(movie)
-        .then(() => {
-          mainApi.getSavedMovies()
-            .then((res) => {
-              const savedMovies = mapSavedMoviesToState(res);
-              setFilteredSavedMovies(savedMovies);
-              setSavedMovies(savedMovies);
-            });
-        })
-        .catch((err) => {
-          setServerProblem(true);
-          console.log(err);
-        })
+  function handleMovieAddToggle(movie) {
+    let isSaved = false;
+    let movieToSave = movie;
+    for (const m of savedMovies) {
+      if (m.movieId === movie.id) {
+        movieToSave = m;
+        isSaved = true;
+        break;
+      }
     }
+
+    mainApi.changeAddCardStatus(movieToSave, !isSaved)
+      .then(() => {
+        mainApi.getSavedMovies()
+          .then((res) => {
+            const savedMovies = mapSavedMoviesToState(res);
+            setFilteredSavedMovies(savedMovies);
+            setSavedMovies(savedMovies);
+          })
+      })
+      .catch((err) => {
+        setServerProblem(true);
+        console.log(err);
+      })
   }
 
   function handleMovieDelete(movieId) {
@@ -300,8 +310,6 @@ function App() {
     return res;
   }
 
-  console.log(isLoggedIn);
-
   return (
     <CurrentUserContext.Provider value={ currentUser }>
       {
@@ -346,6 +354,13 @@ function App() {
                       <Profile
                         onUpdateUser={handleUpdateUser}
                         userData={userData}
+                        setSearchParams={setSearchParams}
+                        setCurrentUser={setCurrentUser}
+                        setUserData={setUserData}
+                        setFilteredMovies={setFilteredMovies}
+                        setSavedMovies={setSavedMovies}
+                        setFilteredSavedMovies={setFilteredSavedMovies}
+                        setIsLoggedIn={setIsLoggedIn}
                       />
                     </ProtectedRoute>}
 
@@ -365,8 +380,7 @@ function App() {
                         setMovies={setFilteredMovies}
                         searchMovies={movies}
                         savedMovies={savedMovies}
-                        onAddMovie={handleMovieAdd}
-                        onDeleteMovie={handleMovieDelete}
+                        onAddMovie={handleMovieAddToggle}
                         onServerProblem={serverProblem}
                         onSaveSearchParams={saveSearchParams}
                         searchParams={searchParams}
@@ -386,17 +400,14 @@ function App() {
                       <Header
                         loggedIn={isLoggedIn}
                       />
-                      <Movies
+                      <SavedMovies
                         type={'saved'}
                         movies={filteredSavedMovies}
                         setMovies={setFilteredSavedMovies}
                         searchMovies={savedMovies}
                         savedMovies={savedMovies}
-                        onAddMovie={handleMovieAdd}
                         onDeleteMovie={handleMovieDelete}
                         onServerProblem={serverProblem}
-                        onSaveSearchParams={saveSearchParams}
-                        searchParams={searchParams}
                         numberToMap={numberToMap}
                         onSetNumberToMap={setNumberToMap}
                         moreNumberToMap={moreNumberToMap}
