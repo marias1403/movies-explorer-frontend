@@ -18,11 +18,6 @@ function SearchForm(props) {
   const [searchMovie, setSearchMovie] = useState(initialSearchParams.request);
 
   useEffect(() => {
-    setSearchMovie('');
-    resetForm();
-  }, [props.type]);
-
-  useEffect(() => {
     if (data !== null) {
       setSearchMovie(data.searchMovie);
     }

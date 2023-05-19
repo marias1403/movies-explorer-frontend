@@ -65,7 +65,7 @@ function App() {
 
   useEffect(() => {
     const jwt = localStorage.getItem('jwt');
-    if (isLoggedIn && jwt) {
+    if (jwt) {
       mainApi.getUserData(jwt)
         .then((userData) => {
           if (userData) {
@@ -87,7 +87,7 @@ function App() {
 
   useEffect(() => {
     const jwt = localStorage.getItem('jwt');
-    if (isLoggedIn && jwt) {
+    if (isLoggedIn) {
       mainApi.getUserData(jwt)
         .then(res => res.data)
         .then(user => setCurrentUser(user))
@@ -137,6 +137,7 @@ function App() {
   function saveSearchParams(obj) {
     const searchParamsString = JSON.stringify(obj);
     localStorage.setItem('searchParams', searchParamsString);
+    setSearchParams(obj)
   }
 
   function handleAuthResult(isSuccess) {
@@ -167,11 +168,18 @@ function App() {
     mainApi.register(name, email, password)
       .then((res) => {
         if(res) {
-          setIsLoggedIn(true);
-          handleAuthResult(true);
-          localStorage.setItem('jwt', res.token);
-          handleGetUserData(res.token);
-          navigate('/movies');
+          mainApi.authorize(email, password)
+            .then((res) => {
+              if(res) {
+                setIsLoggedIn(true);
+                localStorage.setItem('jwt', res.token);
+                handleGetUserData(res.token);
+                navigate('/movies');
+                handleAuthResult(true);
+              } else {
+                handleAuthResult(false);
+              }
+            })
         } else {
           handleAuthResult(false);
         }
