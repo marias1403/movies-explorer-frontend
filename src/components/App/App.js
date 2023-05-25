@@ -70,7 +70,6 @@ function App() {
         .then((userData) => {
           if (userData) {
             setIsLoggedIn(true);
-            navigate('/movies');
             setUserData(userData);
           } else {
             setIsLoggedIn(false);
