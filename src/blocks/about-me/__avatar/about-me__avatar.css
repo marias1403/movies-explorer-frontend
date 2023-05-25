@@ -1,0 +1,21 @@
+.about-me__avatar {
+  width: 270px;
+  height: 327px;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media screen and (max-width: 1279px) {
+  .about-me__avatar {
+    width: 255px;
+    height: 307px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about-me__avatar {
+    width: 292px;
+    height: 352px;
+  }
+}

@@ -1,0 +1,24 @@
+.search-form__input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  min-height: 55px;
+  box-sizing: border-box;
+  background-color: transparent;
+  font-size: 28px;
+  font-weight: 500;
+  overflow: hidden;
+  color: #fff;
+  outline: none;
+}
+
+.search-form__input:focus {
+  border-bottom: 1px solid #4285F4;
+}
+
+@media screen and (max-width: 767px) {
+  .search-form__input {
+    font-size: 18px;
+  }
+}

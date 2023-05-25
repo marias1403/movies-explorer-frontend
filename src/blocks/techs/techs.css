@@ -1,0 +1,9 @@
+.techs {
+  background-color: #272727;
+}
+
+@media screen and (max-width: 767px) {
+  .techs {
+    background-color: #202020;
+  }
+}

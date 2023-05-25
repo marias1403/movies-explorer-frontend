@@ -1,0 +1,12 @@
+@media screen and (max-width: 1279px) {
+  .page__about-me {
+    padding: 0 50px;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .page__about-me {
+    padding: 0 14px;
+  }
+}

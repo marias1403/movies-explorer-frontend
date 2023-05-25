@@ -1,0 +1,16 @@
+.page__search-form {
+  margin: 80px 0 0;
+}
+
+@media screen and (max-width: 1279px) {
+  .page__search-form {
+    margin: 90px 0 0;
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .page__search-form {
+    padding: 0 14px;
+  }
+}

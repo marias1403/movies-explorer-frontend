@@ -1,0 +1,15 @@
+.burger-menu__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+@media screen and (max-width: 767px) {
+  .burger-menu__list {
+    gap: 24px;
+  }
+}

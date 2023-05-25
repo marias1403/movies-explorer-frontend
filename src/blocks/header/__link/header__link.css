@@ -1,0 +1,19 @@
+.header__link {
+  font-weight: 500;
+  text-align: right;
+  font-size: 12px;
+  line-height: 16px;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 13px;
+}
+
+@media screen and (max-width: 767px) {
+  .header__link {
+    font-size: 10px;
+    line-height: 16px;
+  }
+}

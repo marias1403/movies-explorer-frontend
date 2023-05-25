@@ -1,0 +1,9 @@
+.portfolio__link-wrapper {
+  padding: 20px 0 19px;
+  border-bottom: 1px solid #424242;
+  list-style: none;
+}
+
+.portfolio__link-wrapper:last-of-type {
+  border-bottom: none;
+}

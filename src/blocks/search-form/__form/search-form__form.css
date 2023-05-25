@@ -1,0 +1,8 @@
+.search-form__form {
+  display: grid;
+  grid-template-columns: 1fr 58px;
+  column-gap: 22px;
+  justify-items: start;
+  align-items: center;
+  position: relative;
+}

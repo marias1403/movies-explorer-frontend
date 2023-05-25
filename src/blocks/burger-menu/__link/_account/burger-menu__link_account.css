@@ -1,0 +1,9 @@
+.burger-menu__link_account {
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 13px;
+}

@@ -1,0 +1,22 @@
+.promo__title-desktop {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: -1.6px;
+  font-weight: 400;
+  color: #fff;
+}
+
+@media screen and (max-width: 1279px) {
+  .promo__title-desktop {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .promo__title-desktop {
+    display: none;
+  }
+}

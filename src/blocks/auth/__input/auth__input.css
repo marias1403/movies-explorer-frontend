@@ -1,0 +1,22 @@
+.auth__input {
+  margin: 8px 0 0;
+  padding: 15px;
+  border: 0;
+  border-radius: 8px;
+  width: 100%;
+  min-height: 46px;
+  box-sizing: border-box;
+  background-color: #2F2F2F;
+  font-size: 13px;
+  overflow: hidden;
+  color: #fff;
+  outline: none;
+}
+
+.auth__input:focus {
+  border: 1px solid #4285F4;
+}
+
+/*.auth__input:last-of-type {*/
+/*  margin: 10px 0 0;*/
+/*}*/

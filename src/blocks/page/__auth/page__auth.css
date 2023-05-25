@@ -1,0 +1,10 @@
+.page__auth {
+  margin: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .page__auth {
+    margin: 75px auto 0;
+    padding: 0 30px;
+  }
+}

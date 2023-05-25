@@ -1,0 +1,19 @@
+.submit-button {
+  margin: 0;
+  text-align: center;
+  height: 45px;
+  width: 100%;
+  background-color: #4285F4;
+  border-radius: 3px;
+  border: none;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.submit-button:disabled {
+  background-color: #F8F8F8;
+  color: #C2C2C2;
+  cursor: not-allowed;
+}

@@ -1,0 +1,16 @@
+.movie__description {
+  padding: 18px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+@media screen and (max-width: 767px) {
+  .movie__description {
+    padding: 14px;
+  }
+}

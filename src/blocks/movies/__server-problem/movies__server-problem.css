@@ -1,0 +1,10 @@
+.movies__server-problem {
+  margin: 0;
+  padding: 0;
+  max-width: 420px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #8B8B8B;
+}

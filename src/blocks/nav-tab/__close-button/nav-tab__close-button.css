@@ -1,0 +1,19 @@
+.nav-tab__close-button {
+  background-image: url(../../../images/close-button_icon.svg);
+  width: 18px;
+  height: 18px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border-style: none;
+  position: absolute;
+  top: 29px;
+  right: 29px;
+}
+
+@media screen and (max-width: 767px) {
+  .nav-tab__close-button {
+    top: 20px;
+    right: 20px;
+  }
+}

@@ -1,0 +1,19 @@
+.burger-menu__close-button {
+  background-image: url(../../../images/close-button_icon.svg);
+  width: 18px;
+  height: 18px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border-style: none;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .burger-menu__close-button {
+    top: 20px;
+    right: 20px;
+  }
+}

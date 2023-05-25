@@ -1,0 +1,23 @@
+.techs__techs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  border-radius: 10px;
+  background-color: #303030;
+  text-align: center;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .techs__techs {
+    width: 84px;
+    height: 57px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

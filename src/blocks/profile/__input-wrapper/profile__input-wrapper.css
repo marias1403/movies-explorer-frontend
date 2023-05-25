@@ -1,0 +1,20 @@
+.profile__input-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  justify-items: start;
+  align-items: center;
+  border-bottom: 1px solid #424242;
+  position: relative;
+}
+
+.profile__input-wrapper:last-of-type {
+  border-bottom: none;
+  margin: 0 0 200px;
+}
+
+@media screen and (max-width: 1279px) {
+  .profile__input-wrapper:last-of-type {
+    margin: 0 0 190px;
+  }
+}

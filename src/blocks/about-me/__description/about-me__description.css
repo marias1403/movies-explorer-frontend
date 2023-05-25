@@ -1,0 +1,26 @@
+.about-me__description {
+  margin: 26px 0 99px;
+  max-width: 600px;
+  padding: 0;
+  text-align: left;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #fff;
+}
+
+@media screen and (max-width: 1279px) {
+  .about-me__description {
+    margin: 20px 0 87px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about-me__description {
+    margin: 20px 0 38px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+}

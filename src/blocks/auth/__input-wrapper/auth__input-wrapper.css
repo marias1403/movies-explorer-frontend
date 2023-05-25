@@ -1,0 +1,9 @@
+.auth__input-wrapper {
+  width: 100%;
+  position: relative;
+  margin: 0 0 20px;
+}
+
+.auth__input-wrapper:last-of-type {
+  margin: 0;
+}

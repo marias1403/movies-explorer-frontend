@@ -1,0 +1,12 @@
+.search-form__error {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 400;
+  color: #EE3465;
+  position: absolute;
+  top: 62px;
+  left: 0;
+}

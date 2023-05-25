@@ -1,0 +1,12 @@
+.profile__error {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 400;
+  color: #EE3465;
+  position: absolute;
+  top: 70px;
+  right: 0;
+}

@@ -1,0 +1,8 @@
+.movie__button_remove {
+  background-color: #313131;
+  background-image: url(../../../../images/remove_movie_icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 7px 7px;
+  font-size: 0;
+}

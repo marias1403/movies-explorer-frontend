@@ -1,0 +1,20 @@
+.promo__image {
+  width: 722px;
+  height: 244px;
+  object-fit: cover;
+  align-self: end;
+}
+
+@media screen and (max-width: 1279px) {
+  .promo__image {
+    width: 680px;
+    height: 230px;
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .promo__image {
+    display: none;
+  }
+}

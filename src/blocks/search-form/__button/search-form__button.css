@@ -1,0 +1,19 @@
+.search-form__button {
+  display: inline-block;
+  text-align: center;
+  height: 34px;
+  width: 100%;
+  background-color: #4285F4;
+  border-radius: 17px;
+  border: none;
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.search-form__button:disabled {
+  background-color: #F8F8F8;
+  color: #C2C2C2;
+  cursor: not-allowed;
+}

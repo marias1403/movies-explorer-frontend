@@ -1,0 +1,15 @@
+.filter-checkbox__label {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .filter-checkbox__label {
+    font-size: 11px;
+  }
+}

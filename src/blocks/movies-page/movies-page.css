@@ -1,0 +1,8 @@
+.movies-page {
+  max-width: 1140px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 0 auto;
+}
